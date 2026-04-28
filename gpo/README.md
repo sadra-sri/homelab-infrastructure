@@ -1,90 +1,54 @@
-\# Group Policy Lab – Enforcing Wallpaper via GPO
+# Group Policy Lab – Enforcing Desktop Wallpaper
 
-
-
-This project demonstrates the use of \*\*Group Policy Objects (GPOs)\*\* in Active Directory to enforce a desktop wallpaper across all domain-joined clients.
-
-
+This project demonstrates the use of Group Policy Objects (GPOs) in Active Directory to centrally enforce a desktop wallpaper across domain-joined clients.
 
 ---
 
+## Steps Performed
 
+1. On the Domain Controller, created a folder: C:\Wallpaper and placed an image file (1.jpg) inside it.
 
-\## Steps Performed
+2. Shared the folder over the network with read permissions:
+\\SERVER\Wallpaper
 
-1\. On the Domain Controller, created a folder `C:\\Wallpaper` and placed `1.jpg` inside it.
+3. Opened Group Policy Management Console (GPMC) and created a new GPO:
+Desktop-Wallpaper-Policy
 
-2\. Shared the folder as `\\\\SERVER\_SADRA\\Wallpaper` with \*\*Read\*\* permissions for `Everyone`.
+4. Configured the GPO under:
+User Configuration → Administrative Templates → Desktop → Desktop Wallpaper
 
-3\. Opened \*\*Group Policy Management Console (GPMC)\*\* and created a new GPO `Wall`.
+- Enabled the policy  
+- Set wallpaper path: \\SERVER\Wallpaper\1.jpg  
+- Set wallpaper style: Center  
 
-4\. Edited the GPO under:  
+5. Linked the GPO to the domain (lab.local).
 
-&nbsp;  `User Configuration → Administrative Templates → Desktop → Desktop Wallpaper`
+6. On the Windows 10 client:
 
-&nbsp;  - Enabled the policy.  
-
-&nbsp;  - Set wallpaper path to: `\\\\SERVER\_SADRA\\Wallpaper\\1.jpg`  
-
-&nbsp;  - Wallpaper style: \*\*Center\*\*
-
-5\. Linked the GPO to the domain (`lab.local`).
-
-6\. On the Windows 10 client:
-
-&nbsp;  - Ran `gpupdate /force`  
-
-&nbsp;  - Logged out and back in → Wallpaper updated successfully.
-
-
+- Ran: gpupdate /force  
+- Logged out and logged back in → Wallpaper applied successfully  
 
 ---
 
+## Validation
 
-
-\## Screenshots
-
-\- \*\*Shared Folder with Wallpaper Image\*\*  
-
-&nbsp; !\[Shared Folder](screenshots/01\_shared\_folder.png)
-
-
-
-\- \*\*GPO Configured for Desktop Wallpaper\*\*  
-
-&nbsp; !\[GPO Settings](screenshots/02\_gpo\_wallpaper.png)
-
-
-
-\- \*\*Client Desktop After Applying GPO\*\*  
-
-&nbsp; !\[Client Wallpaper](screenshots/03\_client\_wallpaper.png)
-
-
+- Verified GPO application using gpupdate  
+- Confirmed wallpaper change on client machines  
+- Verified shared folder accessibility  
 
 ---
 
+## Tools & Technologies
 
-
-\## Tools Used
-
-\- Windows Server 2022 (Domain Controller)
-
-\- Windows 10 (Client)
-
-\- Active Directory Group Policy Objects (GPO)
-
-
+- Windows Server 2022 (Domain Controller)  
+- Windows 10 (Client)  
+- Group Policy Management (GPMC)  
+- Active Directory  
 
 ---
 
+## Purpose
 
+This lab demonstrates centralized management of user environments using Group Policy in an Active Directory domain.
 
-\## Purpose
-
-This lab was created to practice using \*\*Group Policy\*\* to centrally manage user environments in an Active Directory domain.  
-
-It serves as a \*\*portfolio project\*\* to demonstrate IT support and system administration skills.
-
-
-
+It serves as a practical example of enforcing configurations across multiple domain-joined systems.
