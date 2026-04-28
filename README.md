@@ -1,8 +1,6 @@
 # Enterprise Home Lab using ESXi
 
-This project demonstrates the design and implementation of a virtual enterprise IT infrastructure using VMware ESXi.
-
-The lab simulates a real-world environment including Active Directory, DNS, DHCP, and domain-joined clients, all running in a controlled and isolated network.
+Built a fully functional enterprise-style IT infrastructure using VMware ESXi, simulating real-world Active Directory, DNS, and DHCP services in an isolated lab environment.
 
 ---
 
