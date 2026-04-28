@@ -116,6 +116,19 @@ diagrams/
 
 ---
 
+## 💼 Real-World Relevance
+
+This lab simulates common enterprise IT scenarios such as:
+
+- Centralized identity management using Active Directory  
+- Automated IP assignment using DHCP  
+- Name resolution using DNS  
+- Client-server communication within a controlled network  
+
+These are core responsibilities in IT Support and System Administration roles.
+
+---
+
 ## 🎯 Outcome
 
 Successfully built a fully functional enterprise-like lab environment, demonstrating practical system administration and networking skills.
