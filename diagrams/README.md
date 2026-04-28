@@ -1,3 +1,22 @@
-# Diagrams
-
-This folder contains network topology and architecture diagrams of the home lab.
+                [ VMware Workstation (Host) ]
+                         │
+         ┌───────────────┴───────────────┐
+         │                               │
+         │                               │
+ ┌─────────────────────┐        ┌────────────────────────┐
+ │        ESXi         │        │   External Client VM   │
+ │ (Nested Hypervisor) │        │   (Windows 10)         │
+ └─────────┬───────────┘        └───────────┬────────────┘
+           │                                │
+           │                                │
+           │        VMnet3 (Host-only Network)
+           └───────────────┬────────────────┘
+                           │
+                ┌──────────┴──────────┐
+                │                     │
+                │                     │
+        ┌──────────────┐     ┌──────────────┐
+        │ Domain Ctrl  │     │  Client VM   │
+        │ (AD, DNS,    │     │ (Windows 10) │
+        │  DHCP)       │     │              │
+        └──────────────┘     └──────────────┘
